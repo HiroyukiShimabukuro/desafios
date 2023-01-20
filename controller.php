@@ -25,7 +25,9 @@ function Sum()
 
 function DateDifference($date)
 {
-  $origin = date_create($date);
+  $dateAmerican = convertDateBRtoAmerican($date);
+
+  $origin = date_create($dateAmerican);
   $now = date_create(date("Y-m-d"));
 
   $interval = date_diff($origin, $now);
@@ -35,6 +37,16 @@ function DateDifference($date)
   $message = "A diferença entre o dia " . $date . " e hoje é: ";
 
   return [$formatedInterval, $message];
+}
+
+function convertDateBRtoAmerican($date)
+{
+  $explodedDate = explode('/', $date);
+
+  $day = $explodedDate[0];
+  $month = $explodedDate[1];
+  $year = $explodedDate[2];
+  return $year . '-' . $month . '-' . $day;
 }
 
 ?>

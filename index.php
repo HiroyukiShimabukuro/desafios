@@ -17,7 +17,7 @@
     </article>
     <article>
       <label>Desafio 2 - Diferença de data</label>
-      <form action="controller.php">
+      <form>
         <input type="hidden" name="challenge" value="2">
         <input type="date" name="date">
         <button class="button" id="date-difference">Calcular</button>
