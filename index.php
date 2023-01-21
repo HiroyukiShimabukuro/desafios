@@ -12,10 +12,11 @@
 <body>
   <h2>Testes resolvidos com PHP</h2>
   <section class="challenges">
-    <article>
+    <article class="challenge-1">
       <a class="button" href="controller.php?challenge=1">Desafio 1 - Soma</a>
     </article>
-    <article>
+
+    <article class="challenge-2">
       <label>Desafio 2 - Diferença de data</label>
       <form>
         <input type="hidden" name="challenge" value="2">
@@ -23,16 +24,35 @@
         <button class="button" id="date-difference">Calcular</button>
       </form>
     </article>
-    <article>
-      <a class="button" href="controller.php?challenge=3">Desafio 3 - Criar banco de dados</a>
+
+    <article class="challenge-3">
+      <label>Desafio 3 - Criar banco de dados</label>
+      <form>
+        <input type="hidden" name="challenge" value="3">
+        <div class="fields">
+          <div class="input-group">
+            <label>Host</label>
+            <input type="text" name="host" placeholder="localhost ou 127.0.0.1">
+          </div>
+          <div class="input-group">
+            <label>User</label>
+            <input type="text" name="user" placeholder="root">
+          </div>
+          <div class="input-group">
+            <label>Password</label>
+            <input type="password" name="password">
+          </div>
+        </div>
+        <button class="button" id="create-database">Criar Banco</button>
+      </form>
     </article>
-    <article>
+    <article class="challenge-4">
       <a class="button" href="controller.php?challenge=4">Desafio 4 - Listar usuarios paginados por 5</a>
     </article>
-    <article>
+    <article class="challenge-5">
       <a class="button" href="controller.php?challenge=5">Desafio 5 - Converter data para padrão americano</a>
     </article>
-    <article>
+    <article class="challenge-6">
       <a class="button" href="controller.php?challenge=6">Desafio 6 - Trocar padrão de data</a>
     </article>
   </section>

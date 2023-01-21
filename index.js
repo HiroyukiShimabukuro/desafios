@@ -1,6 +1,7 @@
 const s = (el) => document.querySelector(el);
 
 const dateDifference = s("#date-difference");
+const createDatabase = s("#create-database");
 dateDifference.addEventListener('click', function (event) {
   let date = s(["input[name='date']"]).value;
   if (!date) return;
@@ -13,4 +14,13 @@ dateDifference.addEventListener('click', function (event) {
 
   event.preventDefault();
   location.href = "controller.php?challenge=2&date=" + dateBR;
+})
+
+createDatabase.addEventListener('click', function (event) {
+  const host = s(["input[name='host']"]).value;
+  const user = s(["input[name='user']"]).value;
+  const password = s(["input[name='password']"]).value;
+
+  event.preventDefault();
+  location.href = "controller.php?challenge=3&host=" + host + "&user=" + user + "&password=" + password;
 })

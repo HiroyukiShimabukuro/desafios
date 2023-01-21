@@ -1,16 +1,19 @@
 <?php
 
 $challenges = [
-  1 => "Sum",
-  2 => "DateDifference",
-  3 => "CreateDatabaseTableUsers",
-  4 => "GetUsersPaginate5",
-  5 => "toAmerican",
-  6 => "toggleDate",
+  1 => ["function" => "Sum", "params" => ""],
+  2 => ["function" => "DateDifference", "params" => ["date"]],
+  3 => ["function" => "CreateDatabaseTableUsers", "params" => ["host", "user", "password"]],
+  4 => ["function" => "GetUsersPaginate5", "params" => []],
+  5 => ["function" => "toAmerican", "params" => []],
+  6 => ["function" => "toggleDate", "params" => []],
 ];
-$params = $_GET['date'];
+$params = array_map(function ($el) {
+  return $_GET[$el];
+}, $challenges[$_GET['challenge']]['params']);
 
-[$result, $message] = $challenges[$_GET['challenge']]($params);
+$params = implode(', ', $params);
+[$result, $message] = $challenges[$_GET['challenge']]['function']($params);
 
 function Sum()
 {
@@ -47,6 +50,13 @@ function convertDateBRtoAmerican($date)
   $month = $explodedDate[1];
   $year = $explodedDate[2];
   return $year . '-' . $month . '-' . $day;
+}
+
+function CreateDatabaseTableUsers($data)
+{
+  $data = explode(",", $data);
+  [$host, $user, $password] = $data;
+  $connection = new PDO("");
 }
 
 ?>

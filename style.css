@@ -14,15 +14,15 @@ body{
   margin: 0.5rem 1rem;
 }
 
-.challenges article form{
+.challenges .challenge-2 form{
   display: flex;
   gap: 1rem;
 }
 
-.challenges article form input{
+.challenges .challenge-2 input{
   flex: 1;
 }
-.challenges article form button{
+.challenges .challenge-2 form button{
   flex: 1;
 }
 
@@ -33,4 +33,18 @@ body{
   color: #000000;
   background-color: #ffffff;
   padding: 0.5rem;
+}
+
+.challenge-3 form{ 
+  margin-top: 0.5rem;
+}
+.fields{
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+} 
+.input-group{
+  display:flex;
+  gap: 1rem;
+  align-items: center;
 }
