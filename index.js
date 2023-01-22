@@ -17,10 +17,21 @@ dateDifference.addEventListener('click', function (event) {
 })
 
 createDatabase.addEventListener('click', function (event) {
-  const host = s(["input[name='host']"]).value;
-  const user = s(["input[name='user']"]).value;
+  let host = s(["input[name='host']"]).value;
+  let user = s(["input[name='user']"]).value;
+  let port = s(["input[name='port']"]).value;
   const password = s(["input[name='password']"]).value;
+  const user_id = s(["input[name='user_id']"]).value;
 
   event.preventDefault();
-  location.href = "controller.php?challenge=3&host=" + host + "&user=" + user + "&password=" + password;
+  if (!user_id) {
+    s(["input[name='user_id']"]).focus();
+    s(".fill-user-id").style.display = "flex";
+    return;
+  }
+  host = host ? host : "127.0.0.1";
+  port = port ? port : "3306";
+  user = user ? user : "root";
+
+  location.href = "controller.php?challenge=3&host=" + host + "&port=" + port + "&user=" + user + "&password=" + password + "&user_id=" + user_id;
 })

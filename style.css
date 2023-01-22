@@ -48,3 +48,12 @@ body{
   gap: 1rem;
   align-items: center;
 }
+
+.challenge-3 form button{
+  margin-top: 1rem;
+}
+
+.fill-user-id{
+  display: none;
+  color: red;
+}

@@ -35,6 +35,10 @@
             <input type="text" name="host" placeholder="localhost ou 127.0.0.1">
           </div>
           <div class="input-group">
+            <label>Port</label>
+            <input type="text" name="port" placeholder="3306">
+          </div>
+          <div class="input-group">
             <label>User</label>
             <input type="text" name="user" placeholder="root">
           </div>
@@ -43,7 +47,12 @@
             <input type="password" name="password">
           </div>
         </div>
-        <button class="button" id="create-database">Criar Banco</button>
+        <div class="input-group">
+          <label>User Id</label>
+          <input type="text" name="user_id" placeholder="ID do Usuário">
+          <span class="fill-user-id">Preencha o id do usuario.</span>
+        </div>
+        <button class="button" id="create-database">Criar Banco e listar o usuário desejado</button>
       </form>
     </article>
     <article class="challenge-4">
