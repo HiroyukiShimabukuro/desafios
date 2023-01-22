@@ -3,7 +3,7 @@ include('./connectDatabase.php');
 include('./MyDate.php');
 
 $challenges = [
-  1 => ["function" => "Sum", "params" => ""],
+  1 => ["function" => "Sum", "params" => []],
   2 => ["function" => "DateDifference", "params" => ["date"]],
   3 => ["function" => "ListarUsuario", "params" => ["host", "port", "user", "password", "user_id"]],
   4 => ["function" => "GetUsersPaginate5", "params" => ["host", "port", "user", "password", "p"]],
