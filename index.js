@@ -2,6 +2,7 @@ const s = (el) => document.querySelector(el);
 
 const dateDifference = s("#date-difference");
 const createDatabase = s("#create-database");
+const listPaginateUsers = s("#list-paginate-users");
 dateDifference.addEventListener('click', function (event) {
   let date = s(["input[name='date']"]).value;
   if (!date) return;
@@ -34,4 +35,20 @@ createDatabase.addEventListener('click', function (event) {
   user = user ? user : "root";
 
   location.href = "controller.php?challenge=3&host=" + host + "&port=" + port + "&user=" + user + "&password=" + password + "&user_id=" + user_id;
+})
+
+listPaginateUsers.addEventListener('click', function (event) {
+  let host = s(["input[name='host']"]).value;
+  let user = s(["input[name='user']"]).value;
+  let port = s(["input[name='port']"]).value;
+  const password = s(["input[name='password']"]).value;
+  let page = s(["input[name='page']"]).value;
+
+  host = host ? host : "127.0.0.1";
+  port = port ? port : "3306";
+  user = user ? user : "root";
+  page = page ? page : 1;
+
+  event.preventDefault();
+  location.href = "controller.php?challenge=4&host=" + host + "&port=" + port + "&user=" + user + "&password=" + password + "&p=" + page;
 })

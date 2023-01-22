@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -9,15 +9,17 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
+<?php include("./header.php") ?>
+
 <body>
-  <h2>Testes resolvidos com PHP</h2>
-  <section class="challenges">
-    <article class="challenge-1">
-      <a class="button" href="controller.php?challenge=1">Desafio 1 - Soma</a>
+  <section class="challenges container">
+    <article class="challenge challenge-1">
+      <label class="challenge-title">Desafio 1 - Soma do array [1, 3, 5, 9, 12, 10]</label>
+      <a class="button" href="controller.php?challenge=1">Calcular</a>
     </article>
 
-    <article class="challenge-2">
-      <label>Desafio 2 - Diferença de data</label>
+    <article class="challenge challenge-2">
+      <label class="challenge-title">Desafio 2 - Diferença de data entre data selecionada e hoje</label>
       <form>
         <input type="hidden" name="challenge" value="2">
         <input type="date" name="date">
@@ -25,8 +27,8 @@
       </form>
     </article>
 
-    <article class="challenge-3">
-      <label>Desafio 3 - Criar banco de dados</label>
+    <article class="challenge challenge-3">
+      <label class="challenge-title">Desafio 3 - Criar banco de dados</label>
       <form>
         <input type="hidden" name="challenge" value="3">
         <div class="fields">
@@ -55,14 +57,24 @@
         <button class="button" id="create-database">Criar Banco e listar o usuário desejado</button>
       </form>
     </article>
-    <article class="challenge-4">
-      <a class="button" href="controller.php?challenge=4">Desafio 4 - Listar usuarios paginados por 5</a>
+    <article class="challenge challenge-4">
+      <label class="challenge-title">Desafio 4 - Listar usuários paginados por 5</label>
+      <form>
+        <input type="hidden" name="challenge" value="4">
+        <div class="input-group">
+          <label>Página</label>
+          <input type="number" name="page">
+        </div>
+      </form>
+      <button class="button" id="list-paginate-users">Listar usuários</button>
     </article>
-    <article class="challenge-5">
-      <a class="button" href="controller.php?challenge=5">Desafio 5 - Converter data para padrão americano</a>
+    <article class="challenge challenge-5">
+      <label class="challenge-title">Desafio 5 - Converter data para padrão americano</label>
+      <a class="button" href="controller.php?challenge=5">Converter data</a>
     </article>
-    <article class="challenge-6">
-      <a class="button" href="controller.php?challenge=6">Desafio 6 - Trocar padrão de data</a>
+    <article class="challenge challenge-6">
+      <label class="challenge-title">Desafio 6 - Trocar padrão de data</label>
+      <a class="button" href="controller.php?challenge=6">Trocar padrão de data</a>
     </article>
   </section>
 </body>
