@@ -1,13 +1,14 @@
 <?php
 include('./connectDatabase.php');
+include('./MyDate.php');
 
 $challenges = [
   1 => ["function" => "Sum", "params" => ""],
   2 => ["function" => "DateDifference", "params" => ["date"]],
   3 => ["function" => "ListarUsuario", "params" => ["host", "port", "user", "password", "user_id"]],
   4 => ["function" => "GetUsersPaginate5", "params" => ["host", "port", "user", "password", "p"]],
-  5 => ["function" => "toAmerican", "params" => []],
-  6 => ["function" => "toggleDate", "params" => []],
+  5 => ["function" => "toAmerican", "params" => ["date"]],
+  6 => ["function" => "toggleDate", "params" => ["date"]],
 ];
 
 $params = array_map(function ($el) {
@@ -31,6 +32,8 @@ function Sum()
 function DateDifference($date)
 {
   $dateAmerican = convertDateBRtoAmerican($date);
+  // usando a classe
+  // $dateAmerican = MyDate::toAmerican($date);
 
   $origin = date_create($dateAmerican);
   $now = date_create(date("Y-m-d"));
@@ -52,6 +55,18 @@ function convertDateBRtoAmerican($date)
   $month = $explodedDate[1];
   $year = $explodedDate[2];
   return $year . '-' . $month . '-' . $day;
+}
+
+function toAmerican($data)
+{
+  $response = MyDate::toAmerican($data);
+  return [$response, "Data formatada no formato americano: "];
+}
+
+function toggleDate($data)
+{
+  $response = MyDate::toggle($data);
+  return [$response, "Data no novo formato: "];
 }
 ?>
 <?php include("./header.php") ?>

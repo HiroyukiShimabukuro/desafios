@@ -3,6 +3,9 @@ const s = (el) => document.querySelector(el);
 const dateDifference = s("#date-difference");
 const createDatabase = s("#create-database");
 const listPaginateUsers = s("#list-paginate-users");
+const toAmericanDate = s("#to-american-date");
+const toogleDateFormat = s("#toggle-date-format");
+
 dateDifference.addEventListener('click', function (event) {
   let date = s(["input[name='date']"]).value;
   if (!date) return;
@@ -51,4 +54,26 @@ listPaginateUsers.addEventListener('click', function (event) {
 
   event.preventDefault();
   location.href = "controller.php?challenge=4&host=" + host + "&port=" + port + "&user=" + user + "&password=" + password + "&p=" + page;
+})
+
+toAmericanDate.addEventListener('click', function (event) {
+  let date = s(["input[name='to-american-date']"]).value;
+  if (!date) {
+    s(["input[name='to-american-date']"]).focus();
+    s(".fill-date-to-american").style.display = "flex";
+    return;
+  }
+  event.preventDefault();
+  location.href = "controller.php?challenge=5&date=" + date;
+})
+toogleDateFormat.addEventListener('click', function (event) {
+  let date = s(["input[name='toggle-date-format']"]).value;
+  if (!date) {
+    s(["input[name='toggle-date-format']"]).focus();
+    s(".fill-toogle-date-format").style.display = "flex";
+    return;
+  }
+
+  event.preventDefault();
+  location.href = "controller.php?challenge=6&date=" + date;
 })

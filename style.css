@@ -42,6 +42,13 @@ body{
   background-color: #ffffff;
   padding: 0.5rem;
   align-self: flex-start;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.button:hover{
+  background-color: #FF00E6;
+  color: #FFFFFF;
 }
 
 .challenge-3 form{ 
@@ -62,7 +69,7 @@ body{
   margin-top: 1rem;
 }
 
-.fill-user-id{
+.fill-user-id, .fill-date-to-american, .fill-toogle-date-format{
   display: none;
   color: red;
 }

@@ -70,11 +70,21 @@
     </article>
     <article class="challenge challenge-5">
       <label class="challenge-title">Desafio 5 - Converter data para padrão americano</label>
-      <a class="button" href="controller.php?challenge=5">Converter data</a>
+      <div class="input-group">
+        <label>Data</label>
+        <input type="text" name="to-american-date" placeholder="22/01/2023">
+        <span class="fill-date-to-american">Preencha a data.</span>
+      </div>
+      <button class="button" id="to-american-date">Converter data</button>
     </article>
     <article class="challenge challenge-6">
       <label class="challenge-title">Desafio 6 - Trocar padrão de data</label>
-      <a class="button" href="controller.php?challenge=6">Trocar padrão de data</a>
+      <div class="input-group">
+        <label>Data</label>
+        <input type="text" name="toggle-date-format" placeholder="22/01/2023 ou 2023-01-22">
+        <span class="fill-toogle-date-format">Preencha a data.</span>
+      </div>
+      <button class="button" id="toggle-date-format">Trocar padrão de data</button>
     </article>
   </section>
 </body>

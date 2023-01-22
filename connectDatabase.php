@@ -76,6 +76,7 @@ function GetUsersPaginate5($data)
   $query->execute(['offset' => $page]);
   $users = $query->fetchAll(PDO::FETCH_ASSOC);
   // var_dump($users);
+  if (!$users) return ["Nenhum dado encontrado!", "Resultado da consulta: "];
   $response = array_map(function ($user, $index) {
     if ($index == 0) return "id - nome - login - senha <br><br>" . join(" - ", $user);
     return join(" - ", $user);
