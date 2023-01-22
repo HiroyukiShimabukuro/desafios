@@ -72,8 +72,7 @@ function GetUsersPaginate5($data)
   $page = trim(end($page));
   $db = CreateDatabaseTableUsers($data);
   $page = (($page - 1) * 5);
-  $query = $db->prepare("SELECT * FROM usuarios LIMIT 5 OFFSET " . $page);
-  $query->execute(['offset' => $page]);
+  $query = $db->query("SELECT * FROM usuarios LIMIT 5 OFFSET " . $page);
   $users = $query->fetchAll(PDO::FETCH_ASSOC);
   if (!$users) return ["Nenhum dado encontrado!", "Resultado da consulta: "];
   $response = array_map(function ($user, $index) {
